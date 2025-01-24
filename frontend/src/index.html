@@ -1,0 +1,469 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nice Room</title>
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+    <link href="./output.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Loading Spinner Start -->
+    <div id="loadingSpinner" class="fixed inset-0 z-50 flex items-center justify-center bg-white">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+    </div>
+    <!-- Loading Spinner End -->
+
+    <div class="bg-colorsecond text-center py-2 overflow-hidden">
+        <h1 class="text-xl font-bold text-white whitespace-nowrap animate-marquee"> ~ Sistem Informasi Peminjaman
+            Ruangan Nice Room ~</h1>
+    </div>
+
+    <!-- Navbar Start -->
+
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 animate-fade-in animate-on-scroll">
+        <div class="flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="./img/logo.svg" class="h-12" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap text-colorsecond">Nice Room</span>
+            </a>
+            <div class="flex md:order-2">
+                <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
+                    aria-expanded="false"
+                    class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                    <span class="sr-only">Search</span>
+                </button>
+                <div class="relative hidden md:block mx-auto">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                        <span class="sr-only">Search icon</span>
+                    </div>
+                    <input type="text" id="search-navbar"
+                        class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Search...">
+                </div>
+                <button data-collapse-toggle="navbar-search" type="button"
+                    class="mx-auto items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-search" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+                <a href="login.html" id="loginButton"
+                    class="bg-colorsecond text-white hover:bg-colorone focus:outline-none focus:ring-4 focus:ring-blue-300 rounded-lg text-sm p-2.5 me-1 ml-4">Login</a>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+                <div class="relative mt-3 md:hidden">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </div>
+                    <input type="text" id="search-navbar"
+                        class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Search...">
+                </div>
+                <ul
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-gray-900 bg-blue-700 rounded md:bg-transparent md:text-colorsecond md:p-0 md:dark:text-colorsecond"
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="fasilitas.html"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Fasilitas</a>
+                    </li>
+                    <li>
+                        <a href="booking.html"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Booking</a>
+                    </li>
+                    <li>
+                        <a href="tentangkami.html"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Tentang
+                            Kami</a>
+                    </li>
+                    <li>
+                        <a href="contact.html"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navbar End -->
+
+    <!-- Login Modal Start -->
+
+    <!-- Login Modal End -->
+
+    <!-- Registration Modal Start -->
+    <div id="registerModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black bg-opacity-50 backdrop-blur-sm">
+        <div class="flex items-center justify-center min-h-screen px-4">
+            <div class="relative w-full max-w-md p-4 bg-white rounded-lg shadow-lg">
+                <button id="closeRegisterModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+                <h2 class="mb-4 text-xl font-bold text-center">Registrasi</h2>
+                <form id="registerForm">
+                    <div class="mb-4">
+                        <label for="fullName" class="block mb-2 text-sm font-medium text-gray-700">Nama Lengkap</label>
+                        <input type="text" id="fullName" required
+                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-200"
+                            placeholder="Nama Lengkap">
+                    </div>
+                    <div class="mb-4">
+                        <label for="regEmail" class="block mb-2 text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="regEmail" required
+                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-200"
+                            placeholder="Email">
+                    </div>
+                    <div class="mb-4">
+                        <label for="regUsername" class="block mb-2 text-sm font-medium text-gray-700">Username</label>
+                        <input type="text" id="regUsername" required
+                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-200"
+                            placeholder="Username">
+                    </div>
+                    <div class="mb-4">
+                        <label for="regPassword" class="block mb-2 text-sm font-medium text-gray-700">Password</label>
+                        <input type="password" id="regPassword" required
+                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-200"
+                            placeholder="Password">
+                    </div>
+                    <div class="mb-4">
+                        <label for="confirmPassword" class="block mb-2 text-sm font-medium text-gray-700">Konfirmasi Password</label>
+                        <input type="password" id="confirmPassword" required
+                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-200"
+                            placeholder="Konfirmasi Password">
+                    </div>
+                    <button type="submit"
+                        class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300">Daftar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Registration Modal End -->
+
+    <!-- Hero Section Start -->
+    <div id="controls-carousel" class="relative w-full animate-fade-in animate-on-scroll" data-carousel="static">
+        <!-- Carousel wrapper -->
+        <div class="relative h-[550px] overflow-hidden md:h-[550px]">
+            <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="./img/baner1.jpg" class="absolute block w-full h-full object-cover" alt="...">
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                <img src="img/baner2.jpg" class="absolute block w-full h-full object-cover" alt="...">
+            </div>
+        </div>
+        <!-- Slider controls -->
+        <button type="button"
+            class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-prev>
+            <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M5 1 1 5l4 4" />
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button"
+            class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-next>
+            <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 9 4-4-4-4" />
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+    <!-- Hero Section End -->
+
+    <!-- Main Content Start -->
+    <main class="container mx-auto px-1 py-2 bg-slate-100">
+        <div class="flex justify-between items-center mb-4">
+            <div></div> <!-- Empty div to push breadcrumb to the right -->
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-2">
+            <div class="md:col-span-3">
+                <section class="bg-white p-4 shadow mb-4 animate-fade-in animate-on-scroll">
+                    <nav class="flex justify-end" aria-label="Breadcrumb">
+                        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                            <li class="inline-flex items-center">
+                                <a href="#"
+                                    class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10 2a1 1 0 00-.707.293l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h10a1 1 0 001-1v-6.586l1.293 1.293a1 1 0 001.414-1.414l-7-7A1 1 0 0010 2z" />
+                                    </svg>
+                                    Home
+                                </a>
+                            </li>
+                        </ol>
+                    </nav>
+                    <h2 class="text-xl font-bold mb-4 text-center">
+                        Tentang Nice Room
+                    </h2>
+                    <p class="mb-4 text-justify">
+                        Nice Room adalah sistem informasi fleksibel yang mempermudah siapa saja dalam melakukan
+                        peminjaman ruangan, baik untuk keperluan pribadi maupun profesional. Dengan fitur pencarian
+                        berbasis lokasi, kapasitas, dan kebutuhan fasilitas, sistem ini dirancang untuk memberikan
+                        pengalaman yang praktis dan efisien. Didukung dengan jadwal terintegrasi waktu nyata, Nice Room
+                        memungkinkan pengguna untuk mengelola pemesanan secara transparan dan mudah, menjadikannya
+                        solusi yang elegan untuk berbagai kebutuhan ruang.
+                    </p>
+                    <h3 class="text-lg font-bold mb-2">Keunggulan Nice Room:</h3>
+                    <ul class="list-disc list-inside mb-4 text-gray-700">
+                        <li>Fasilitas Terbaru: Menyediakan fasilitas terbaru dan terbaik untuk kenyamanan pengguna.</li>
+                        <li>Pembayaran yang Mudah: Menawarkan berbagai metode pembayaran yang mudah dan aman.</li>
+                        <li>Beragam Pilihan Ruangan: Menyediakan berbagai jenis ruangan sesuai kebutuhan.</li>
+                        <li>Pelayanan Pelanggan: Memberikan pelayanan pelanggan yang responsif dan profesional.</li>
+                    </ul>
+                </section>
+                <section class="bg-white p-4 shadow mb-4 animate-fade-in animate-on-scroll">
+                    <h2 class="text-xl font-bold mb-2 text-center">
+                        Rekomendasi Ruangan
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="border p-2 animate-slide-in animate-on-scroll">
+                            <a href="ruangmeeting.html">
+                            <h3 class="font-bold text-center">
+                                Ruang Meeting Novelty
+                            </h3>
+                            <img alt="Meeting Room Garuda" class="mx-auto my-2" height="150"
+                                src="./img/Ruang Meeting 1.jpg"/>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <i class="fas fa-user">
+                                    </i>
+                                    <span class="ml-1">
+                                        60
+                                    </span>
+                                </div>
+                                <span>
+                                    Rp. 6.000.000 / Hari
+                                </span>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="border p-2 rounded animate-slide-in animate-on-scroll">
+                            <a href="ruangserbaguna.html">
+                            <h3 class="font-bold text-center">
+                                Ruang Serbaguna Novelty
+                            </h3>
+                            <img alt="Conference Room Nuri" class="mx-auto my-2" height="150"
+                                src="img/Ruang Serbaguna.jpg"/>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <i class="fas fa-user">
+                                    </i>
+                                    <span class="ml-1">
+                                        10000
+                                    </span>
+                                </div>
+                                <span>
+                                    Rp. 10.000.000 / Hari
+                                </span>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="border p-2 rounded animate-slide-in animate-on-scroll">
+                            <a href="aula.html">
+                            <h3 class="font-bold text-center">
+                                Aula Novelty
+                            </h3>
+                            <img alt="Aula Excellent" class="mx-auto my-2" height="150"
+                                src="img/Aula.jpg"/>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <i class="fas fa-user">
+                                    </i>
+                                    <span class="ml-1">
+                                        2000
+                                    </span>
+                                </div>
+                                <span>
+                                    Rp. 15.000.000 / Hari
+                                </span>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <section class="bg-white p-4 shadow animate-fade-in animate-on-scroll">
+                    <h2 class="text-xl font-bold mb-2">
+                        Fasilitas
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-lg text-center animate-slide-in animate-on-scroll">
+                            <h3 class="font-bold mb-2">Wi-Fi Gratis</h3>
+                            <i class="fas fa-wifi text-4xl mb-2 text-colorsecond"></i>
+                            <p>Akses internet cepat dan gratis di seluruh area ruangan.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-lg text-center animate-slide-in animate-on-scroll">
+                            <h3 class="font-bold mb-2">Proyektor</h3>
+                            <i class="fas fa-video text-4xl mb-2 text-colorsecond"></i>
+                            <p>Proyektor berkualitas tinggi untuk presentasi dan meeting.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-lg text-center animate-slide-in animate-on-scroll">
+                            <h3 class="font-bold mb-2">AC</h3>
+                            <i class="fas fa-snowflake text-4xl mb-2 text-colorsecond"></i>
+                            <p>Ruangan ber-AC untuk kenyamanan selama menggunakan fasilitas.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-lg text-center animate-slide-in animate-on-scroll">
+                            <h3 class="font-bold mb-2">Kursi Nyaman</h3>
+                            <i class="fas fa-chair text-4xl mb-2 text-colorsecond"></i>
+                            <p>Kursi ergonomis untuk kenyamanan selama rapat atau seminar.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-lg text-center animate-slide-in animate-on-scroll">
+                            <h3 class="font-bold mb-2">Papan Tulis</h3>
+                            <i class="fas fa-chalkboard text-4xl mb-2 text-colorsecond"></i>
+                            <p>Papan tulis lengkap dengan spidol untuk presentasi.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-lg text-center animate-slide-in animate-on-scroll">
+                            <h3 class="font-bold mb-2">Sound System</h3>
+                            <i class="fas fa-volume-up text-4xl mb-2 text-colorsecond"></i>
+                            <p>Sound system berkualitas untuk acara dan presentasi.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <aside class="bg-white p-4 shadow md:col-span-1 animate-fade-in animate-on-scroll">
+                <h2 class="text-xl font-bold mb-2">
+                    Kategori Ruangan
+                </h2>
+                <ul class="space-y-2">
+                    <li>
+                        <a class="text-blue-500" href="ruangserbaguna.html">
+                            Ruang Serbaguna
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-blue-500" href="ruangmeeting.html">
+                            Ruang Meeting
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-blue-500" href="ruangbelajar.html">
+                            Ruang Belajar
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-blue-500" href="auditorium.html">
+                            Auditorium
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-blue-500" href="labkomputer.html">
+                            Lab Komputer
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-blue-500" href="aula.html">
+                            Aula
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+    <!-- Main Content End -->
+
+    <!-- Gallery Section Start -->
+    <section class="container bg-slate-50 mx-auto px-4 py-8 animate-fade-in animate-on-scroll">
+        <h2 class="text-2xl font-bold mb-4 text-center">Galeri Nice Room</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="overflow-hidden rounded-lg shadow-lg animate-slide-in animate-on-scroll">
+                <img src="img/Aula.jpg" alt="Ruangan 1" class="w-full h-48 object-cover">
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-lg animate-slide-in animate-on-scroll">
+                <img src="img/Ruang Serbaguna.jpg" alt="Ruangan 2" class="w-full h-48 object-cover">
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-lg animate-slide-in animate-on-scroll">
+                <img src="img/Ruang Meeting 1.jpg" alt="Ruangan 3" class="w-full h-48 object-cover">
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-lg animate-slide-in animate-on-scroll">
+                <img src="img/Ruang Belajar 4.jpg" alt="Ruangan 4" class="w-full h-48 object-cover">
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-lg animate-slide-in animate-on-scroll">
+                <img src="img/Auditorium.jpg" alt="Ruangan 5" class="w-full h-48 object-cover">
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-lg animate-slide-in animate-on-scroll">
+                <img src="img/Lab Komputer 1.jpg" alt="Ruangan 6" class="w-full h-48 object-cover">
+            </div>
+        </div>
+    </section>
+    <!-- Gallery Section End -->
+
+    <!-- Footer Start -->
+    <footer class="bg-colorsecond text-white py-8 animate-fade-in animate-on-scroll">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-3">
+            <div class="mb-4 md:mb-0">
+                <img src="img/logo2.svg" alt="Nice Room Logo" class="h-20">
+            </div>
+            <div class="text-center mb-4 md:mb-0">
+                <h2 class="text-xl font-bold">Nice Room</h2>
+                <p>Jalan Lenteng Agung Raya No.20 RT.5/RW.1 Lenteng Agung, Srengseng Sawah, <br> Kec. Jagakarsa, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12640</p>
+                <p>No. Telepon: +62 131 141 151</p>
+                <p>Email: niceroom@gmail.com</p>
+                <br>
+                <p>Develop By Mahasiswa STT NF @ 2024</p>
+            </div>
+            <div class="flex space-x-4 px-3">
+                <a href="#" class="text-white hover:text-colorone">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="text-white hover:text-colorone">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="text-white hover:text-colorone">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-white hover:text-colorone">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
