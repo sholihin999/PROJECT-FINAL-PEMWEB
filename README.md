@@ -12,5 +12,5 @@
 |----------------------|--------------|---------------------------------------------------------------|
 | **Muhamad Solihin**  | Frontend     | Membuat Halaman index, fasilitas, login, register dan booking |
 | **Uulul Azmi**       | Frontend     |   Mencari image, membuat halaman tentang kami, dan contact    |
-| **Lestari**          | Backend      |            |
-| **Alya Reina Sagita**| Backend      |            |
+| **Lestari**          | Backend      |    Membuat tabel pada bagian ruangan, peminjaman dan jadwal   |
+| **Alya Reina Sagita**| Backend      |               Membuat bagian pengelola ruangan                |
